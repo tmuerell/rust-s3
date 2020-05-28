@@ -135,7 +135,7 @@ pub fn authorization_header(access_key: &str,
                             signature: &str)
                             -> String {
     format!("AWS4-HMAC-SHA256 Credential={access_key}/{scope},\
-            SignedHeaders={signed_headers},Signature={signature}",
+            SignedHeaders={signed_headers},SignatureVersion=3,Signature={signature}",
             access_key = access_key,
             scope = scope_string(datetime, region),
             signed_headers = signed_headers,
